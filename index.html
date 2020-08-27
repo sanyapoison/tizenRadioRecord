@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+	<title>Radio Record</title>	
+	<link rel="stylesheet" href="css/input.css"/>
+	<link rel="stylesheet" href="css/legend.css%3Fv=7.css"/>
+	<link rel="stylesheet" href="css/template_styles.css%3Fv=22.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/record.css%3Fv=1.css"/>
+	<link rel="stylesheet" href="css/style_ss.css">
+
+	<script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+	<script type="text/javascript" src="src/libs/lodash.compat.min.js"></script>
+	<script type="text/javascript" src="src/libs/event_emitter.js"></script>
+	<script type="text/javascript" src="dist/smartbox.js"></script>
+	<script type="text/javascript" src="js/app.js%3Fv=30"></script>
+	<script type="text/javascript" src="js/scenes/channels1.js%3Fv=33"></script>
+	<script type="text/javascript" src="js/scenes/channels2.js%3Fv=33"></script>
+	<script type="application/javascript" src="js/legends.js%3Fv=3"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.11.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.Storage.js"></script>
+	<script type="text/javascript" src="js/ui.tabs.js"></script>
+	<script type="text/javascript" src="js/soundmanager2.js%3Fv=9"></script>
+	<script type="text/javascript" src="js/jquery.record.js%3Fv=5"></script>
+</head>
+
+<body>
+
+		
+	<div id="screensaver" style="z-index: 501;"></div>
+	<div class="logo-rr-container"></div>
+
+	<div class="index-wrap">
+
+	<header>
+
+	<div class="player current-station-background-color" style="background-color: #2a2d2e;">
+		<div class="wrapper">
+		<div class="play-pause noselect pull-left ready">
+		<span class="icon-station-pause"></span>
+	</div>
+
+	<div class="pull-left" id="nowplay-image" style="background-image: url(http://p554305.ihc.xyz/fprecord/&quot;/bitrix/templates/flat-new/img/black40.png&quot;);">
+	<i class="icon-st-rr" style="width: 100px; color: hsla(245, 25%, 90%, 1);"></i>
+	</div>
+
+	<div class="textinfo pull-left">
+	<div class="current-station-font-color current-station-name" id="nowplay-station" style="color: rgb(224, 223, 236);">Radio Record</div>
+	<div class="" id="nowplay-artist">Loading...</div>
+	<div id="nowplay-title">Loading...</div>
+	</div>
+	
+	
+		<div class="btn menu" style="position: absolute; margin-top:0px; margin-left: 559px; float: left;"> <!-- Необходим для работы smart box-->			
+			<div class="btn nav-item menu-item" data-content="channels1"><div class="ch2"></div></div>
+			<div class="btn nav-item menu-item" data-content="channels2"><div class="ch1"></div></div>
+		</div>
+
+	<div class="scenes">
+	
+		<div class="scene channels2">
+			<div class="top-buttons pull-right">
+			<div class="all-stations-menu current-station-border-color current-station-font-color pull-left noselect tooltip tooltipstered" style="border-color: rgba(89, 87, 117, 0.5);">
+			<div class="all-stations-dropdown current-station-background-color" style="background-color: #2a2d2e; display: block; margin-right: -142px;">
+								
+			<table>
+				<tbody>
+					<tr>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/jungle_320" id="jungle" style="width: 110px;"><span>Jungle</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/liquidfunk_320" id="liquidfunk" style="width: 110px;"><span>Liquid Funk</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/russiangold_320" id="russiangold" class="stlogo-russiangold"><span>Russian Gold</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/drumhits_320" id="drumhits" class="stlogo-drumhits"><span>Drum'n'Bass Hits</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/eurodance_320" id="eurodance" class="stlogo-eurodance"><span>Eurodance</span></td>
+
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/technopop_320" id="technopop" class="stlogo-technopop"><span>Technopop</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/discofunk_320" id="discofunk" class="stlogo-discofunk"><span>Disco/Funk</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rap_320" id="rap" class="stlogo-rap"><span>Rap</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rapclassics_320" id="rapclassics" class="stlogo-rapclassics"><span>Rap Classics</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/cadillac_320" id="cadillac" class="stlogo-cadillac"><span>Cadillac FM</span></td>
+						<td class="stlogo-1980 tile nav-item" id="1980" data-url="http://air2.radiorecord.ru:9003/1980_320"><span>1980-е</span>
+					</tr>
+
+					<tr>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/chillhouse_320" id="chillhouse" class="chillhouse"><span>Chill House</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:805/groovetribal_320" id="groovetribal" class="groovetribal"><span>Groove/Tribal</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/complextro_320" id="complextro" class="complextro"><span>Complextro</span></td>
+						<td class="stlogo-1970 tile nav-item" id="1970" data-url="http://air2.radiorecord.ru:9003/1970_320"><span>1970-е</span>
+						<td class="stlogo-russianhits tile nav-item" id="russianhits" data-url="http://air2.radiorecord.ru:9003/russianhits_320"><span>Russian Hits</span>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+					</tr>
+
+					<tr>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+					</tr>
+
+					<tr>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+					</tr>
+
+					<tr>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+						<td class="" data-url="" id=""><span></span></td>
+					</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+		</div>
+							
+					
+		<div class="scenes channels1">
+            <div class="top-buttons pull-right">
+			<div class="all-stations-menu current-station-border-color current-station-font-color pull-left noselect tooltip tooltipstered" style="color: rgb(224, 223, 236); border-color: rgba(89, 87, 117, 0.5);">
+			<div class="all-stations-dropdown current-station-background-color" style="background-color: #2a2d2e; display: block; z-index:; margin-right: -142px;">
+								
+			<table>
+				<tbody>
+					<tr>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rr_320" id="rr"><span>Radio&nbsp;Record</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/fut_320" id="fut"><span>Future House</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/club_320" id="club"><span>EDM</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mix_320" id="mix"><span>Megamix</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/gold_320" id="gold" style="width: 113px; border-bottom: none;"><span>Gold</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/tm_320" id="tm"><span>Trancemission</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/ps_320" id="ps"><span>Pirate&nbsp;Station</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/deep_320" id="deep"><span>Deep</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/vip_320" id="vip"><span>Vip&nbsp;House</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mini_320" id="mini"><span>Minimal/Tech</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/trop_320" id="trop"><span>Tropical</span></td>
+					</tr>
+
+					<tr>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/chil_320" id="chil"><span>Chill-Out</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rus_320" id="rus"><span>Russian&nbsp;Mix</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/sd90_320" id="sd90"><span>Супердиско&nbsp;90-х</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/fbass_320" id="fbass"><span>Future Bass</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rmx_320" id="rmx"><span>Remix</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/gast_320" id="gast"><span>Гастарбайтер FM</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/hbass_320" id="hbass"><span>Hard Bass</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/ansh_320" id="ansh"><span>Аншлаг FM</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/ibiza_320" id="ibiza"><span>Innocence</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/goa_320" id="goa"><span>GOA/PSY</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/yo_320" id="yo"><span>Black</span></td>
+					</tr>
+
+					<tr>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/brks_320" id="brks"><span>Breaks</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/pump_320" id="pump"><span>Old School</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/techno_320" id="techno"><span>Techno</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/trap_320" id="trap"><span>Trap</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/dub_320" id="dub"><span>Dubstep</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/teo_320" id="teo"><span>Hardstyle</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rave_320" id="rave"><span>Rave&nbsp;FM</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/dc_320" id="dc"><span>Dancecore</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/naft_320" id="naft"><span>Нафталин&nbsp;FM</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rock_320" id="rock"><span>Rock</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mdl_320" id="mdl"><span>Медляк&nbsp;FM</span></td>
+					</tr>
+
+					<tr>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/gop_320" id="gop"><span>Гоп&nbsp;FM</span></td>
+						</div>
+						<td id="mf" class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mf_320"><span>Маятник&nbsp;Фуко</span></td>
+						<td id="symph" class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/symph_320" style="width:110px;"><span>Симфония&nbsp;FM</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/elect_320" id="elect" style="width:110px;"><span>Electro</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mt_320" id="mt" style="width:114px;"><span>Midtempo</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mmbt_320" id="mmbt" style="width:110px;"><span>Moombahton</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/jackin_320" id="jackin" style="width:110px;"><span>Jackin'/Garage</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/progr_320" id="progr" style="width:110px;"><span>Progressive</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/househits_320" id="househits" style="width:110px;"><span>House Hits</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/synth_320" id="synth"><span>Synthwave</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/bighits_320" id="bighits"><span>Big Hits</span></td>
+					</tr>
+
+					<tr>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/dream_320" id="dream"><span>Dream Dance</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/darkside_320" id="darkside"><span>Darkside</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/uplift_320" id="uplift"><span>Uplifting</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/houseclss_320" id="houseclss"><span>House Classics</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/edmhits_320" id="edmhits"><span>EDM Hits</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/trancehouse_320" id="trancehouse" style="width: 110px;"><span>Trancehouse</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/hypno_320" id="hypno" style="width: 110px;"><span>Hypnotic</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/neurofunk_320" id="neurofunk" style="width: 110px;"><span>Neurofunk</span></td>
+						<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/tecktonik_320" id="tecktonik" style="width: 110px;"><span>Tecktonik</span></td>
+						<td class="station-2-step tile nav-item" id="2step" data-url="http://air2.radiorecord.ru:9003/2step_320" style="width: 110px;"><span>2-step</span></td><!--необходимо прописать class="station-2-step" для отображения иконки-->
+						<td class="tile nav-item" id="trancehits" data-url="http://air2.radiorecord.ru:9003/trancehits_320" style="width: 110px;"><span>Trance Hits</span></td>
+				</tbody>
+			</table>
+			</div>
+		</div>
+	</div>
+
+	</header>
+
+<div class="legends"></div>
+
+
+
+<script>
+
+					$(function(){
+
+						footer_fix();
+					});
+
+
+		
+					$(function(){if (isMobile(/iPhone|iPad|iPod/i)) $('#volume-slider').css('display','none'); });
+
+					var footer_fix = function () {
+			
+						var $loc = location.pathname;
+						var $links = $('table.foo_menu td > a');
+						$links.removeClass('selected');
+
+						$.each($links,function(){
+						
+							if($(this).attr('href') == $loc) {
+							$(this).addClass('selected');							
+							return false;
+							}
+						});
+
+/*						$('section#page-news-template .news-body main img,.news-popup .news-body img').each(function(){ 
+							if ($(this).parent('a').length == 0) $(this).wrap('<a class="big-image" href="http://p554305.ihc.xyz/fprecord/'&#32;+&#32;$(this).attr('src')&#32;+&#32;'" />'); 
+						});
+*/
+
+						$('.big-image,.big_image').magnificPopup({
+						type: 'image',
+						callbacks: {
+						open: function() { 
+							//$('.mfp-img').attr('style',''); 
+						},
+				  		resize: function() { 
+							//$('.mfp-img').attr('style',''); 
+						}	
+						}
+						});
+
+						//console.log('fchanged3');						
+					}
+
+					window.currentInstance = new Date().getTime();
+
+					setInterval(function(){
+
+						if (window.localStorage.currentPlayer && window.localStorage.currentPlayer != window.currentInstance) {
+							stop_play();
+						};
+
+					}, 1000);
+
+					// init station vars
+					window.current_station = prefixes.indexOf('rr'); // Необходимо для того чтобы начинался отсчет с станции Радио рекорда, а то отображаеться вначале цифровые станции.
+					if (getParameterByName('st')) { window.current_station = prefixes.indexOf(getParameterByName('st')); }
+
+					var current_bitrate = 'hq';
+					var is_now_update = 0;
+
+					// bind events
+					$(document).on('soundManagerStop soundManagerStart soundManagerResume soundManagerPause soundManagerReady', function() {
+						update_views();
+					});
+
+					$(document).on('soundManagerReady', function(mySMSound) {
+						$('.player .play-pause').removeClass('loading').addClass('ready');
+					});
+						
+					// Реакция на паузу
+					
+					$(document).on('click', '.player .play-pause.ready', function() {
+						if ($(this).hasClass('play')) {
+							$(this).removeClass('play');
+							stop_play();
+						}
+						else {
+							$(this).addClass('play');
+							start_play(stations[prefixes[current_station]][current_bitrate]);
+                            if(window.admanInit) window.admanInit(window.globalSound.id, window.globalSound.url, this);
+						}
+						update_views();
+					});
+
+					$(document).on('click', '.open-popup-player', function() {
+						stop_play();
+						playerWin = window.open('/player-mini/?st='+prefixes[current_station], 'Player', 'width=240,height=300,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no');
+						playerWin.focus();
+						return false;
+					});
+					
+					// Реакция на нажатие на любую станцию 
+					
+					$(document).on('click', '.all-stations-dropdown td', function(e) {
+						e.stopPropagation();
+						current_station = prefixes.indexOf($(this).attr("id"));
+						start_play(stations[prefixes[current_station]][current_bitrate]);
+						update_views();
+
+						if (window.location.pathname == '/radio/stations/') {
+							window.history.pushState({"html":$('#pjax-container').html(),"pageTitle":stations[prefixes[current_station]]['name']}, stations[prefixes[current_station]]['name'], '/radio/stations/?st='+prefixes[current_station]);
+							$('.tab-buttons .tab.active').trigger('click');
+						}
+					});
+
+					$(document).on('click', '#nowplay-station', function() {
+						$('.all-stations td#'+prefixes[current_station]).trigger('click');
+					});
+
+					$(document).on('click', '.all-stations td:not(#more)', function(e) {
+
+						if(!$(this).hasClass('active')) {
+						current_station = prefixes.indexOf($(this).attr('id'));
+						$('.all-stations-dropdown td#'+prefixes[current_station]).trigger('click');
+						} else {                            
+							$(this).removeClass('active');
+							$('.play-pause.play').trigger('click');
+						}
+						if(window.admanInit) window.admanInit(window.globalSound.id, window.globalSound.url, this);
+					});
+
+
+
+					$(document).on("click", ".shop-more", function(e){
+						e.preventDefault();
+
+						$.ajax({
+						  url: $(this).attr("href")
+						}).done(function(data) {
+							var nav = $(data).find(".navigation");
+
+							if(nav.length>0){ $(".navigation").replaceWith(nav);}
+							else {$(".navigation").remove();}
+
+						  var cont = $(data).find(".shop-items").find(".col.elem");
+						  cont.each(function(index){
+
+						  	$(".col.elem").last().after(this)
+					  //console.log( index + ": " + $( this ).text() );
+
+
+						  })
+						});
+					})
+
+					function update_views() {
+
+						$("#station-page-detail .heading .tab-buttons .tab.active").css("border", "2px "+ stations[prefixes[current_station]]["fcolor"] +"solid")
+						$('#nowplay-artist').html('');
+						$('#nowplay-title').html('');
+						$('.nowplay-big-image').html('<img src="http://www.radiorecord.ru/bitrix/templates/flat-new/img/transparent.png" />').removeClass('valid');
+						$('.fake-heading').css('background-image', 'url("/bitrix/templates/flat-new/img/back_cover.jpg")');
+						$(".into_station").attr("href", "/radio/stations/?st="+prefixes[current_station]);
+						$('#nowplay-image').attr('current', prefixes[current_station]);
+						$('.current-station-background-color').css('background-color', stations[prefixes[current_station]]['color']);
+						$('.current-station-font-color').css('color', stations[prefixes[current_station]]['fcolor']);
+						$('.current-station-name').html(stations[prefixes[current_station]]['name']);
+						$('.current-station-icon').removeClass().addClass('icon-st-'+prefixes[current_station]).addClass('current-station-font-color current-station-icon');
+						$('.current-station-border-color').css('border-color', stations[prefixes[current_station]]['bcolor']);
+						$('.current-station-subject').html(stations[prefixes[current_station]]['text']);
+
+						if (window.globalSound && window.globalSound.playState && window.globalSound.url.match("^http://air")) {	// if play
+							// heading updaters
+							$('.all-stations-dropdown td[id="'+prefixes[current_station]+'"]').addClass('active');
+							$('.all-stations td[id="'+prefixes[current_station]+'"]').addClass('active');
+							$('.player .play-pause.ready').children('span').addClass('icon-station-pause').removeClass('icon-station-play');
+							$('.player .play-pause.ready').addClass('play');
+						}
+						else {	// if stop
+							$('.player .play-pause.ready').children('span').removeClass('icon-station-pause').addClass('icon-station-play');
+							$('.all-stations-dropdown td').removeClass('active');
+							$('.all-stations td').removeClass('active');
+							$('.player .play-pause.ready').removeClass('play');
+						}
+
+						if (prefixes[current_station] == 'mix') {
+							$('.tab-buttons .tab.history').hide();
+						}
+						else {
+							$('.tab-buttons .tab.top100, .tab-buttons .tab.history').show();
+						}
+
+						$(document).trigger('currentStationChanged', {'station': prefixes[current_station]});
+
+						update_track_inline();
+					}
+
+
+					function update_track_inline() {
+						
+						var $status ='';
+
+						var artist = "";
+						var track = "";
+
+						if (!$('#nowplay-artist').hasClass('block_to_update')) {
+							$('#nowplay-artist').addClass('block_to_update');
+
+							var $pl_link = stations[prefixes[current_station]]['link'];
+							var $rnumber = 1 + Math.floor(Math.random() * 9999999);
+							//$pl_link = $pl_link + '?' + $rnumber;
+							//var $jjson = $.getJSON($pl_link);							
+
+							//console.log($pl_link + '?' + $rnumber);
+								
+							//console.log($pl_link);
+
+							$.getJSON($pl_link, function(data) {								
+								var items = [];
+                                                                  var $ddata = JSON.parse('"' + data + '"');
+
+									//console.log($ddata);
+								//if($ddata.length == 15 && $ddata) {
+								if($ddata) {
+									
+								/*
+								$.getJSON('https://itunes.apple.com/search?at=11lM73&country=ru&limit=1&media=music&explicit=No&term=' 							
+								+ encodeURI(data.artist + ' - '+ data.title) + '&callback=?', function($itunes) {
+
+								if ($itunes.length !== 0) {
+
+								var $itunes_res = $itunes.results[0];
+
+								if ($itunes_res) {
+									data['image100'] = $itunes_res.artworkUrl100;
+									data['image600'] = $itunes_res.artworkUrl600;
+								} else {
+									data.image100 = '';
+									data.image600 = '';
+								}																
+								}
+
+								*/
+								        if (!data['image100'] || !data['image600']) {
+									  data['image100'] = null;
+									  data['image600'] = null;
+									}
+									
+
+
+								$.each(data, function(key, val) {
+									
+									if (key == 'artist' || key == 'ARTIST' && $('#nowplay-artist').html() != val) {										
+
+										//console.log($('.textinfo #nowplay-artist').html());
+										//console.log('newSonger: ' + val);
+										artist = val;
+										if (prefixes[current_station]=="mix") {
+											val = "By "+ val;
+											$('#nowplay-artist').html(val);
+										}
+										else{
+											resetLike();
+									 		$('#nowplay-artist').html(val);
+									 	}
+									}
+									if (key == 'title'  || key == 'NAME' && $('#nowplay-title').html() != val) {
+										track = val;
+										$('#nowplay-title').html(val);
+									}
+									if (key == 'image100' || key == 'image') {										
+										if (val == null || val == '') { $('#nowplay-image').html('<i style="width: 100px; color: '+stations[prefixes[current_station]]['fcolor']+';" class="icon-st-'+prefixes[current_station]+'"></i>').css('background-image', 'url(/bitrix/templates/flat-new/img/black40.png)').removeClass('valid'); }
+										else { if ($('#nowplay-image img').attr('src') != val) { $('#nowplay-image').html('<img src="http://p554305.ihc.xyz/fprecord/'+val+'" />').addClass('valid'); } }
+									}
+									if (key == 'image600') {
+										if (val == null) {
+											$('.nowplay-big-image').html('<img src="http://www.radiorecord.ru/bitrix/templates/flat-new/img/transparent.png" />').removeClass('valid');
+											$('.fake-heading').css('background-image', 'url("/bitrix/templates/flat-new/img/back_cover.jpg")');
+										}
+										else {
+											if ($('.nowplay-big-image img').attr('src') != val) {
+												$('.nowplay-big-image').html('<img src="http://p554305.ihc.xyz/fprecord/'+val+'" />').addClass('valid');
+												$('.fake-heading').css('background-image', 'url("'+val+'")');
+											}
+										}
+									}
+									if (key == 'itunesURL') {
+										if (val == null) {
+											$('.itunes_link').hide();
+										}
+										else {
+											$('.itunes_link').show();
+											$(".itunes_link").attr("href", val);
+										}
+									}
+
+								}); /* }); */ start_updater(5000); }  
+								
+							}).fail(function(jqxhr, textStatus, error){
+								console.log('fail getJson'); 
+								//var err = textStatus + ', ' + error;
+								console.log( "Request Failed: " + jqxhr);
+								start_updater(15000, 'failjson'); 
+							
+							});
+
+							$('#nowplay-artist').removeClass('block_to_update');
+							$('#nowplay-image img').removeClass('loading');
+						}
+
+						var trackName = $('#nowplay-artist').html()+" - "+$('#nowplay-title').html();
+						if (trackName!=" - ") {
+							$(".vk_link").attr("href", "https://vk.com/search?c%5Bq%5D="+ encodeURIComponent(trackName) +"&c%5Bsection%5D=audio")
+						}
+					}
+
+					function start_updater($time,$status) {						
+	
+						if(window.updaterIntervalID) clearInterval(window.updaterIntervalID);
+						if (!$time) var $time = 8000;
+						//console.log($time);
+						window.updaterIntervalID = setInterval("update_track_inline();",$time);
+					}
+
+					start_updater(1000);
+					update_views();
+					
+					// Громкость в слайдере
+					
+					$(function() {
+						var slider = $('#volume-slider');
+						slider.slider({
+							range: "min",
+							min: 100,
+							max: 100,
+							value: getVolume(),
+							orientation: 'horizontal',
+							start: function(event,ui) {},
+							slide: function(event, ui) {
+								var value = slider.slider('value');
+								setVolume(value);
+							},
+							change: function(event, ui) {
+								var value = slider.slider('value');
+								setVolume(value);
+							},
+							stop: function(event,ui) {
+								//tooltip.fadeOut('fast');
+							},
+						});
+
+						$('.tooltip').tooltipster({
+							animation: 'fade',
+							delay: 0,
+							theme: 'tooltipster-light',
+							touchDevices: false,
+							trigger: 'hover',
+							contentAsHTML: true
+						});
+
+						init_chartfresh();
+					});
+
+					function changeCurrentStation(prefix) {
+						current_station = prefixes.indexOf(prefix);
+						update_views();
+					}
+
+					function getParameterByName(name) {
+						name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+						var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+						results = regex.exec(location.search);
+						return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+
+						/*var result = "Not found",
+						        tmp = [];
+						    location.search
+						    //.replace ( "?", "" )
+						    // this is better, there might be a question mark inside
+						    .substr(1)
+						        .split("&")
+						        .forEach(function (item) {
+						        tmp = item.split("=");
+						        if (tmp[0] === name) result = decodeURIComponent(tmp[1]);
+						    });
+						    return result;*/
+
+					}
+
+					$(document).off('contentLoaded');
+					$(document).on("contentLoaded", function() {
+						if (window.globalSound && window.globalSound.playState && window.globalSound.url && !window.globalSound.url.match("^http://air")) {
+							stop_play();
+						}
+						init_chartfresh();
+						update_views();
+						footer_fix();
+
+						
+		$(".event-buy, .radario-button, .event-buy-button").attr("data-utm-source", "")
+		$(".event-buy, .radario-button, .event-buy-button").attr("data-utm-medium", "")
+		$(".event-buy, .radario-button, .event-buy-button").attr("data-utm-campaign", "")
+
+					});
+
+					function init_chartfresh() {
+						$('#programm-block table.player').off('click', '.play_pause')
+						$('#programm-block table.player').on('click', '.play_pause', function() {
+							if(isMobile()) {
+								window.location.href = $(this).attr('item_url');
+							}
+							else {
+								itemControllActive = $(this).closest('table.player');
+								if ($(this).hasClass('play')) {
+									stop_play();
+								}
+								else {
+									start_play($(this).attr('item_url'), 'superchart');
+									$(this).addClass('play');
+									$(this).closest('table.player').addClass('active');
+								}
+							}
+						});
+
+						$(document).on('soundManagerStop', function(event, radio) {
+							$('#programm-block table.player').find('td.play_pause').removeClass('play');
+							$('#programm-block table.player').removeClass('active');
+						});
+					}
+
+					
+
+					$(document).on('click', '.like-top-menu', function(e) {
+						e.stopPropagation();
+						hideStations();
+						$(this).css("color", "#FFAE00");
+						$(".like_in").toggle();
+					});
+
+					
+
+					function hideLike() {
+						$(".like_in").hide();
+					}
+
+					function resetLike() {
+						$(".like-top-menu").css("color", "rgb(188, 193, 194)");
+					}
+
+					$(document).on('click', '.vk_add', function() {
+						var artist = $('#nowplay-artist').text();
+						var name = $('#nowplay-title').text();
+						var image = $('#nowplay-image img').attr('src');
+
+						if(artist!='Record Dance Radio') {
+							//ga('send', 'event', 'LikeAudio', 'record', artist+' - '+name);
+						}
+
+						artist = encodeURIComponent(artist);
+						name = encodeURIComponent(name);
+						image = encodeURIComponent(image);
+						if (image === 'undefined') { image = 'http://radiorecord.ru/vk_pic.jpg'; }
+
+						var ttt = "http://vkontakte.ru/share.php?url=http://vk.com/audio?q=";
+						var ttt2 = encodeURIComponent(" - ");
+						var ttt3 = encodeURIComponent("Мне нравится ");
+						var ttt4 = encodeURIComponent(" на РАДИО РЕКОРД!");
+						var ttt5 = encodeURIComponent("Кликайте и добавляйте!");
+						var link_text = ttt+artist+ttt2+name+"&title="+ttt3+artist+ttt2+name+ttt4+"&description="+ttt5+"&image="+image+"&noparse=1";
+						window.open(link_text,'popup', 'width=640,height=520')
+					});
+
+					$(document).on('click', '.fb_add', function() {
+						var artist = $('#nowplay-artist').text();
+						var name = $('#nowplay-title').text();
+						var image = $('#nowplay-image img').attr('src');
+
+						if(artist!='Record Dance Radio') {
+							//ga('send', 'event', 'LikeAudio', 'record', artist+' - '+name);
+						}
+
+						artist = encodeURIComponent(artist);
+						name = encodeURIComponent(name);
+						image = encodeURIComponent(image);
+						if (image === 'undefined') { image = 'http://radiorecord.ru/vk_pic.jpg'; }
+
+						var ttt = "https://www.facebook.com/dialog/feed?app_id=1423433514596180&display=popup&caption="+encodeURIComponent("Радио Рекорд - №1 Dance Radio")+"&link=http://www.radiorecord.ru";
+						var ttt2 = encodeURIComponent(" - ");
+						var ttt3 = encodeURIComponent("Мне нравится ");
+						var ttt4 = encodeURIComponent(" на РАДИО РЕКОРД!");
+						var ttt5 = encodeURIComponent("Кликайте и добавляйте!");
+						var link_text = ttt+"&name="+ttt3+artist+ttt2+name+ttt4+"&description="+ttt5+"&picture="+image+"&redirect_uri=http://radiorecord.ru/fb_callback.php";
+						var windowFB = window.open(link_text,'popup', 'width=640,height=520');
+
+					});
+
+
+
+					$(document).on('soundManagerFinish', function(event) {
+						var el = $('.play_pause.play').parent().next().find(".play_pause");
+						if (!el.length) {
+							el = $('.play_pause.play').closest("article").nextAll("article:not(.hidden)");
+							el = el[0];
+							el = $(el).find(".play_pause");
+						};
+						$(document).trigger('soundManagerStop');
+						el.trigger("click");
+						console.log("Конец");
+					});
+
+
+					
+
+				</script>
+<div class="nav-item webos" onclick="javascript:document.location.href='http://p554305.ihc.xyz/fprecord/index1.html'" href="http://p554305.ihc.xyz/fprecord/index1.html" style="position: absolute; margin-top:-54px; margin-left: 940px;"></div>				
+
+<script  src="js/index1.js"></script>
+
+		
+					<!-- Задний прозрачный фон-->
+		<div onclick="show('none')" id="bshadow"></div>
+
+					<!-- Само окно-->
+			<div id="window">
+						
+						 <!-- Картинка крестика-->
+				<div class="close nav-item" onclick="show('none')"></div>
+					
+						<!-- Картинка ipad'a-->
+				<div class="rrlogo"></div>
+			<h2>Wave - это неофициальное приложение Radio Record для Smart TV.<br><br>Приложение находится в разработке и работает в тестовом режиме.</br> 
+		<br>Стабильная работа возможна на телевизорах: <br>LG (NetCast 3.0, WebOS), Samsung (Tizen).</br> <br>Контакты: <br>waveapp.tv@yandex.ru</br></h2><br><h2>Поддержка проекта:<br>Яндекс кошелёк: 4100110611438897<br>https://yasobe.ru/na/wave_app_smarttv<h2><br><h3>Ежемесячная оплата хостинга ihc.ru в данный момент <br> - 99 руб/месяц.
+Проект создан не для зарабатывания денег, а для удобного прослушивания музыки на Smart TV.<br><br>Для стабильной работы приложения не хватает возможностей бесплатных хостингов, так как количество запросов превышают допустимые лимиты. Кто хочет может поддержать проект.</h3>
+				
+			</div>
+			
+		
+		
+		<div class="btn nav-item" style="position: absolute;top: 1px; z-index: 500; margin-left: 1110px;
+		"onclick="show('block')">
+			<div class="inform"></div>
+		</div>
+		
+		
+
+<script type="text/javascript">
+
+
+					//Функция показа
+			function show(state){
+
+					document.getElementById('window').style.display = state;			
+					document.getElementById('bshadow').style.display = state; 			
+			}
+			
+		</script>	
+				
+</body>
+</html>

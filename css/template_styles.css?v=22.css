@@ -1,0 +1,596 @@
+html, body {
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+	margin: 0;
+    padding: 0;
+    background:#000;
+	font-size:12px;
+	font-weight:100;
+	font-family:Arial,serif;
+	
+	    }
+
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+	width: 1280px;
+	height: 665px;
+
+
+	
+	
+	
+	
+	}
+
+	#bshadow{
+		display: none;
+		opacity: 0.8;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		padding: 16px;
+		background-color: rgba(1, 1, 1, 0.725);
+		z-index: 502;
+		overflow: auto;
+	}
+	
+	#window{
+		width: 418px;
+		height: 550px;
+		margin: 50px auto;
+		display: none;
+		background: #ff6000;
+		z-index: 502;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: -45px;
+		bottom: 0;
+		padding: 16px;
+		border-radius: 5px;
+		text-align:  center;
+
+
+		
+	}
+	
+	.close{
+		width: 48px;
+    	height: 48px;
+		margin-left: 378px;
+		margin-top: -10px;
+		padding: 0 0 0 0;
+		cursor: pointer;
+		background-image: url(img/exit.png);
+		border:none;
+
+	}
+
+	.inform{
+		width: 45px;
+    	height: 45px;
+		margin-left: 378px;
+		background-size:contain;
+		background-repeat: no-repeat;
+		
+		margin: 2px;
+		cursor: pointer;
+		background-image: url(img/info.svg);
+		
+		
+		
+    	
+
+	}
+	
+		.webos{
+		width: 100px;
+    	height: 44px;
+		margin-left: 378px;
+		
+		
+		text-align: center;
+		
+		cursor: pointer;
+		background-image: url(../img/webos.svg);
+		background-size:contain;
+		background-repeat: no-repeat;
+		border:none;
+		z-index: 500;
+		
+		
+    	
+
+	}
+	
+
+
+	.rrlogo{
+		width: 180px;
+    	height: 90px;
+    	background-image: url(../img/wave_logo_b.svg);
+    	background-size:contain;
+		background-repeat: no-repeat;
+    	z-index: 501; 
+    	position: relative;	
+    	margin-left: 127px;	
+    	margin-top: -40px; 
+    	outline:none; 
+    	border:none;
+
+
+
+	}	
+
+	
+.btn {
+	
+    display: block;
+ 	float: left;  
+    z-index: 508;
+    
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    
+
+
+
+
+}
+
+
+
+.ch2{
+	cursor: pointer;	 
+    background: url('img/bn2.svg') no-repeat;
+    margin: 2px;
+    width: 45px;
+    height: 45px;
+    
+    
+    
+}
+
+.ch1{
+	cursor: pointer;
+	background: url('img/bn1.svg') no-repeat;
+    margin: 2px;
+    width: 45px;
+    height: 45px;
+
+}
+
+
+
+.menu-item{
+            color: #fff;
+        }
+
+        .text-justify{
+            color: #fff;
+        }
+
+.scene {
+          display:none;
+        }
+#smart_player{
+position:absolute;
+z-index:0;
+}
+
+
+
+fieldset,img{border:0}
+
+ol,ul{list-style:none}
+caption,th{text-align:left}
+
+
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-weight:inherit;font-size:100%}
+@font-face{font-family:pf_dintext_pro;src:url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-bold-webfont.eot);src:url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-bold-webfont.eot?) format('embedded-opentype'),url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-bold-webfont.woff) format('woff'),url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-bold-webfont.ttf) format('truetype');font-weight:700;font-style:normal}@font-face{font-family:pf_dintext_pro_medium;src:url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-medium.ttf) format('truetype');font-weight:400;font-style:normal}@font-face{font-family:pf_dintext_pro_normal;src:url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-regular-webfont.eot);src:url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-regular-webfont.eot?) format('embedded-opentype'),url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-regular-webfont.woff) format('woff'),url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-regular-webfont.ttf) format('truetype');font-weight:400;font-style:normal}@font-face{font-family:pf_dintext_pro;src:url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-thin-webfont.eot);src:url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-thin-webfont.eot?) format('embedded-opentype'),url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-thin-webfont.woff) format('woff'),url(http://p554305.ihc.xyz/i/fonts/pfdintextpro-thin-webfont.ttf) format('truetype');font-weight:lighter;font-style:normal}@font-face{font-family:gotham pro;font-style:normal;font-weight:700;src:local('Gotham Pro Bold'),url(http://p554305.ihc.xyz/i/fonts/GothaProBol.woff) format('woff')}@font-face{font-family:gotham pro medium;font-style:normal;font-weight:400;src:local('Gotham Pro Medium'),url(http://p554305.ihc.xyz/i/fonts/GothaProMed.woff) format('woff')}@font-face{font-family:gotham pro regular;font-style:normal;font-weight:400;src:local('Gotham Pro Regular'),url(http://p554305.ihc.xyz/i/fonts/GothaProReg.woff) format('woff')}@font-face{font-family:gotham pro;font-style:normal;font-weight:lighter;src:local('Gotham Pro Light'),url(http://p554305.ihc.xyz/i/fonts/GothaProLig.woff) format('woff')}@font-face{font-family:open sans;font-style:normal;font-weight:700;src:local('OpenSans-Bold'),url(http://p554305.ihc.xyz/i/fonts/Open_Sans/OpenSans-Bold.eot) format('embedded-opentype'),url(http://p554305.ihc.xyz/i/fonts/Open_Sans/OpenSans-Bold.woff) format('woff'),url(http://p554305.ihc.xyz/i/fonts/Open_Sans/OpenSans-Bold.ttf) format('truetype')}@font-face{font-family:open sans;font-style:normal;font-weight:400;src:local('OpenSans-Regular'),url(http://p554305.ihc.xyz/i/fonts/Open_Sans/OpenSans-Regular.eot) format('embedded-opentype'),url(http://p554305.ihc.xyz/i/fonts/Open_Sans/OpenSans-Regular.woff) format('woff'),url(http://p554305.ihc.xyz/i/fonts/Open_Sans/OpenSans-Regular.ttf) format('truetype')}*{margin:0;padding:0;border:0;outline:0;zoom:1}
+
+
+
+
+
+.mt15{margin-top:15px}.mt10{margin-top:10px}.ml15{margin-left:15px}.ml10{margin-left:10px}.mr30{margin-right:30px}.pr15{padding-right:15px!important}.pr10{padding-right:10px!important}.pr7{padding-right:7px!important}.play_color{color:#ff6000}.buffer_color{background-color:#cfcfcf!important}.buffer_color::before{border-top:6px solid #cfcfcf!important}.now_color{background-color:#838587!important}.position_color{background-color:#e1e1e1!important}.theme_background{background-color:#ff6000}.theme_color{color:#ff6000!important}.with-shadow{-webkit-box-shadow:2px 2px 0 #757575;-moz-box-shadow:2px 2px 0 #757575;box-shadow:2px 2px 0 #757575}.with-round{-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
+
+
+
+.block-header{display:block;padding:10px 15px;text-transform:uppercase;font-size:18px;margin:0;background-color:#000;color:#fff}
+.block-header a{color:#fff;text-decoration:none}aside 
+.block-header{background-color:#000}
+
+
+.gallery-new-back-close:hover{background-position:0 -11px}
+.gallery-new-back-close2{visibility:hidden;cursor:pointer;top:21px;left:50%;z-index:525;margin-left:300px;position:absolute;background-image:url(http://www.radiorecord.ru/i/img/rr/record_may2012/gallery-close.png);width:60px;height:11px}
+.gallery-new-titles{width:100%;height:34px;background-color:#000;color:#fff;font-size:18px;line-height:42px;text-transform:uppercase}
+.gallery-new-gals{width:760px;height:515px}.gallery-new-back{background-color:#000;opacity:.8;width:100%;height:100%;visibility:hidden;top:0;left:0;z-index:500;position:fixed}.programm_more{float:right;padding-right:8px;margin:5px}.programm_more a{float:right;color:#999;font-size:15px;padding-left:30px;padding-top:5px}
+
+
+
+
+.index-wrap header{position:fixed;width:1280px;z-index:500}
+
+.index-wrap header.fix{z-index:450;position:fixed;width:1280px;margin-top:0;top:0}
+
+.index-wrap header .player{top:0;width:1280px;height:55px;background-color:#2a2d2e}
+
+.logo-rr-container{
+	
+	width:127px;
+	height:61px;
+	z-index: 501;
+	background:url(../img/wave_logo.svg) no-repeat center;
+	background-size:contain;
+	position: relative;
+	margin-left: 55px;
+	margin-top: -3px;
+	opacity: 1.0;
+
+}
+
+.index-wrap header .player .wrapper{
+	width:996px;
+	height:55px;
+	margin:0 auto;
+	position:relative;
+	margin-top: -58px !important;
+}
+
+.index-wrap header .player .wrapper_3px{
+	position:relative;
+	width:980px;
+	height:3px;
+	margin:0 auto;
+	overflow:hidden;
+	background-image:url(http://p554305.ihc.xyz/bitrix/templates/flat/img/3px.png);
+	margin-top:-3px;
+	background-repeat:repeat
+}
+
+.index-wrap header .player .play-pause {
+	margin-left: 90px;
+	cursor:pointer;
+	width:55px;
+	height:55px;
+	text-align:center;
+	line-height:55px;
+	color:#fff;
+	font-size:26px;
+	background-color:#ff6000
+
+}
+
+
+
+
+
+/*Квадрат фокуса - ищи его в legend
+
+.index-wrap header .player .play-pause:hover .focus .play-pause .focus{
+	background-color:#757578;
+
+
+}
+
+*/
+
+.index-wrap header .player .play-pause i{
+	display:none
+	}
+
+.index-wrap header .player .play-pause.ready:hover{
+	opacity:.9
+	}
+
+.index-wrap header .player .play-pause.loading span{
+	display:none
+	}
+
+.index-wrap header .player .play-pause.loading i{
+	display:inline
+	}
+
+.index-wrap header .player #nowplay-image{
+	width:55px;
+	height:55px;
+	background-size:cover;
+	font-size:53px;
+	text-align:center;
+	line-height:55px
+	}
+
+.index-wrap header .player a.into_station{display:block}@media only screen and (max-device-width:480px){.index-wrap header{position:relative}.index-wrap .container{margin-top:20px}}.index-wrap header .player #nowplay-image img{width:55px;height:55px}.index-wrap header .player .textinfo{width:264px;text-decoration:none;min-height:55px}
+.index-wrap header .player .textinfo #nowplay-station{color:#fff;margin:4px 0 0 11px;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+.index-wrap header .player .textinfo #nowplay-artist{color:#fff;margin:2px 0 0 11px;opacity:.4;max-width:330px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.index-wrap header .player .textinfo #nowplay-title{color:#fff;margin:0 0 0 11px;opacity:.6;max-width:330px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.index-wrap header .player .top-buttons{background-repeat:no-repeat;background-position:0 center}.index-wrap header .player .top-buttons>div{cursor:pointer;min-width:43px;height:55px}.index-wrap header .player .top-buttons>div i,.index-wrap header .player .switch-stations>div,.index-wrap header .player .play-pause span{opacity:1}
+
+
+.index-wrap header .player .top-buttons div.active{background-image:url(http://p554305.ihc.xyz/fprecord/css/img/black40.png)}
+
+
+.index-wrap header .player .top-buttons .all-stations-menu:hover{color:#fff!important}
+.index-wrap header .player .top-buttons .all-stations-menu>span{font-size:11px;line-height:56px;text-align:center;text-transform:uppercase;padding:0 5px}
+.index-wrap header .player .top-buttons .all-stations-menu>span i{font-size:10px;margin-left:5px}
+
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown{
+	display:none;
+	position:relative;
+	background-color:#2a2d2e;
+	color:rgba(255,255,255,.4);
+	z-index:100;
+}
+
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td{
+	width:115px;
+	height:115px;
+	padding-bottom:13px;
+	vertical-align:bottom;
+	font-size:13px;
+	/* border:1px #9aa1ac solid; - Отображение сетки, сетка */
+	text-align:center;
+	white-space:nowrap
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td i{font-size:61px;display:block;position:relative;height:80px}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td span{
+	/* color:rgba(255,255,255,.4);  цвет подписей станций*/
+	display:block;
+	text-decoration:none;
+	line-height:23px;
+}
+
+/*Квадрат фокуса*/
+
+/*.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover.focus, .index-wrap .focus, .tile .focus {
+	background-color:#757578;
+}*/
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:before{
+	
+ 	font-family:record;
+    font-size:72px;
+    width:100px;
+    vertical-align:middle;
+    height:85px;
+    line-height:94px;
+    text-align:center;    
+	}
+
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td.active{
+	color:#000;
+	background-color: #ff6000;
+	border-radius: 4px;
+}
+
+/*.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover:before{color:#000}*/
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td span{display:block;width:112px;text-decoration:none}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover a{color:#fff}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rr:before{content:'\f14b';font-size:72px;line-height:40px;display:block; margin-left:7px }
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#naft:before{content:'\f141';font-size:72px;}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#ps:before{content:'\f145';font-size:57px;line-height:93px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#sd90:before{content:'\f14d';font-size:55px;line-height:94px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#tm:before{content:'\f150';font-size:54px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#teo:before{content:'\f14f'}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dc:before{content:'\f12f';font-size:51px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#techno:before{content:'\f14e'}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#trap:before{content:'\f152';font-size:53px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#vip:before{content:'\f154';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#club:before{content:'\f12e';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#deep:before{content:'\f130';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dub:before{content:'\f131';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#gop:before{content:'\f138';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#ibiza:before{content:'\f161';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mf:before{content:'\f163';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mt:before{content:'\f169';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#symph:before{content:'\f165';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#househits:before{content:'\f174';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#dream:before{content:'\f175';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#bighits:before{content:'\f176';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#darkside:before{content:'\f17a';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#uplift:before{content:'\f17b';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#houseclss:before{content:'\f17c';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#edmhits:before{content:'\f17d';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#synth:before{content:'\f171';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mmbt:before{content:'\f16b';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#jackin:before{content:'\f16d';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#progr:before{content:'\f16e';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#elect:before{content:'\f166';font-size:75px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mix:before{content:'\f140';font-size:40px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rock:before{content:'\f14a';font-size:45px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#chil:before{content:'\f12d';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mdl:before{content:'\f13e';font-size:41px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#brks:before{content:'\f12c';font-size:60px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#pump:before{content:'\f146';font-size:70px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rus:before{content:'\f14c';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#yo:before{content:'\f126';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#fut:before{content:'\f134';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#mini:before{content:'\f13f';font-size:55px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#goa:before{content:'\f136';font-size:72px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#trop:before{content:'\f153';font-size:72px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#gold:before{content:'\f137';font-size:72px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rave:before{content:'\f11b';font-size:55px;line-height:100px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#hbass:before{content:'\f15d';font-size:55px;line-height:100px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#gast:before{content:'\f135';font-size:55px;line-height:100px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#ansh:before{content:'\f15e';font-size:55px;line-height:100px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#fbass:before{content:'\f132';font-size:70px;line-height:100px}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rmx:before{content:'\f149';font-size:55px;line-height:100px}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#trancehouse:before {
+	content: '\f182';
+	font-size: 80px
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#hypno:before {
+	content: '\f184';
+	font-size: 80px
+}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#neurofunk:before {
+	content: '\f185';
+	font-size: 80px
+}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#tecktonik:before {
+	content: '\f186';
+	font-size: 80px
+}
+
+.index-wrap header .station-2-step:before { 
+	content: '\f18b'; 
+	font-size: 80px; 
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#trancehits:before { 
+	content: '\f18d'; 
+	font-size: 80px; 
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#jungle:before {
+	content: '\f18e';
+	font-size: 80px
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#liquidfunk:before {
+	content: '\f190';
+	font-size: 90px
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#russiangold:before {
+    content: '\f193';
+    font-size: 90px;
+    
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#drumhits:before {
+    content: '\f192';
+    font-size: 90px;
+    
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#eurodance:before {
+	content: '\f197';
+	font-size: 95px;
+	
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#technopop:before {
+	content: '\f198';
+	font-size: 95px;
+	
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#discofunk:before {
+	content: '\f196';
+	font-size: 95px;
+	
+}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rap:before {
+	content: '\f19d';
+	font-size: 95px;
+	
+}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#rapclassics:before {
+	content: '\f19e';
+	font-size: 95px;
+	
+}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#cadillac:before {
+	content: '\f19c';
+	font-size: 95px;
+	
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown .stlogo-1980:before { 
+	content: '\f1a2';
+	font-size: 90px; 
+}
+
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#chillhouse:before {
+	content: '\f1a3';
+	font-size: 90px;
+	
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#groovetribal:before {
+	content: '\f1a8';
+	font-size: 95px;
+	
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td#complextro:before {
+	content: '\f1a7';
+	font-size: 95px;
+	
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown .stlogo-1970:before { 
+	content: '\f1a4';
+	font-size: 110px; 
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown .stlogo-russianhits:before {
+	content: '\f1ab';
+	font-size: 90px;
+	line-height: 100px
+}
+
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr:nth-child(1) td{border-top:1}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr:nth-child(3) td{border-bottom:0}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr td:nth-child(1){border-left:0}
+.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown tr td:nth-child(7){border-right:0}
+
+/*.index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td {background-image:url(img/black40.png);border:1px rgba(255,255,255,.2) solid} - Отображение сетки, сетка */
+
+
+/* .player .top-buttons .all-stations-menu .all-stations-dropdown td:hover{color:#fff} */
+
+.index-wrap header .player .top-buttons .open-popup-player{font-size:21px;text-align:center;line-height:56px;color:#bebfc0}
+.index-wrap header .player .top-buttons .open-popup-player:hover{color:#fff!important}
+.index-wrap header .player .top-buttons .like-top-menu{font-size:21px;text-align:center;line-height:55px;color:#bebfc0}
+.index-wrap header .player .top-buttons .like-top-menu:hover{color:#fff!important}
+.index-wrap header .player .top-buttons .top{font-size:21px;text-align:center;line-height:55px;width:80px;color:#bebfc0}
+
+.index-wrap header .player .top-buttons .top:hover{color:#fff!important}
+.index-wrap header .player .like_in{display:none;box-shadow:0 0 8px -2px #222325;background-repeat:no-repeat;position:absolute;margin-left:792px;top:63px;z-index:200;background-color:#222325}
+
+.index-wrap header .player .like_in span{line-height:30px;margin-left:7px;font-size:12px}.index-wrap header .player .like_in i{font-size:25px;float:left;width:26px;text-align:center;line-height:31px}.index-wrap header .player .like_in a{color:#bcc1c2;text-decoration:none;display:block;padding:5px 23px 5px 14px}
+
+.index-wrap header .player .like_in a:hover{color:#fcffff;background-color:#262829}
+.index-wrap header .player .like_in a:first-child{padding-top:10px}
+.index-wrap header .player .like_in a:last-child{padding-bottom:10px}
+.index-wrap header .player .like_in::before{content:' ';position:absolute;z-index:205;left:77px;top:-16px;border:8px solid transparent;border-bottom:8px solid #222325}
+.index-wrap header .player .top-buttons .volume .player-volume-wrapper{display:none;background-color:#2a2d2e;margin-top:-1px;background-image:url(http://p554305.ihc.xyz/fprecord/css/img/black40.png);position:relative;z-index:400;padding-bottom:20px}
+.index-wrap header .player .top-buttons .volume:hover .player-volume-wrapper{display:block}
+.index-wrap header .player .top-buttons .volume #volume-slider{border-radius:3px;width:10px;position:relative;height:130px;background-color:#fff;left:16px;z-index:200}
+.index-wrap header .player #volume-slider{position:absolute;margin-left:650px;cursor:pointer;width:65px;height:3px;background:#121315;margin-top:25px;border-radius:5px}
+.index-wrap header .player #volume-slider .ui-slider-range{height:3px;border-top-left-radius:5px;border-bottom-left-radius:5px;background:#ff6000;position:inherit}
+.index-wrap header .player #volume-slider .ui-slider-range::after{content:'';width:65px;height:20px;display:block;margin-top:-8px}
+.index-wrap header .player #volume-slider .ui-slider-handle{position:absolute;border:1px solid #d3d3d3;font-weight:400;color:#555;height:18px;top:-8px;width:1px;background-color:#d3d8d1}
+.index-wrap header .player .top-buttons .volume .ui-slider-range{background:#ff6000;position:absolute;border:0;bottom:0;width:100%;border-radius:3px 3px 3px 3px}.index-wrap header .player .top-buttons .vk_plus{display:block;font-size:36px;border-right:1px #4d4f50 solid;text-align:center;line-height:63px;color:#bebfc0}.index-wrap header .player .top-buttons .bitrate-changer{display:block;font-size:24px;text-align:center;line-height:63px;color:#fff}.index-wrap header .player .top-buttons .bitrate-changer i.active:before{background-color:rgba(255,255,255,.4)}.index-wrap header .player .top-buttons .switch-stations{display:block;background:0 0;min-width:56px}.index-wrap header 
+
+.player .top-buttons .switch-stations:hover{background-image:none}
+.index-wrap header .player .top-buttons .switch-stations>div{cursor:pointer;height:56px;width:14px;margin:0 5px;color:#bebfc0;line-height:56px;font-size:21px}
+.index-wrap header .player .top-buttons .switch-stations .icon-station-backward:hover{color:#67d0f7}
+.index-wrap header .player .top-buttons .switch-stations .icon-station-forward:hover{color:#67d0f7}
+.index-wrap header .player .top-buttons .icon-hq:before{display:block;overflow:hidden;width:23px;height:20px;line-height:21px;margin:17px auto;border-radius:3px}
+.index-wrap header .player .logo-rr{z-index:500;position:relative;width:200px;height:101px;background-color:#000}
+
+
+
+
+
