@@ -1,6 +1,6 @@
 html, body {
-    width: 1280px;
-    height: 720px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 	margin: 0;
     padding: 0;
@@ -14,7 +14,7 @@ html, body {
 table{
 	border-collapse:collapse;
 	border-spacing:0;
-	width: 1280px;
+	width: 100%;
 	height: 665px;
 
 
@@ -218,18 +218,18 @@ input,textarea,select{font-family:inherit;font-weight:inherit;font-size:100%}
 
 
 
-.index-wrap header{position:fixed;width:1280px;z-index:500}
+.index-wrap header{position:fixed;width:100%;z-index:500}
 
-.index-wrap header.fix{z-index:450;position:fixed;width:1280px;margin-top:0;top:0}
+.index-wrap header.fix{z-index:450;position:fixed;width:100%;margin-top:0;top:0}
 
-.index-wrap header .player{top:0;width:1280px;height:55px;background-color:#2a2d2e}
+.index-wrap header .player{top:0;width:100%;height:55px;background-color:#2a2d2e}
 
 .logo-rr-container{
 	
 	width:127px;
 	height:61px;
 	z-index: 501;
-	background:url(../img/wave_logo.svg) no-repeat center;
+	background:url(../img/logo.png) no-repeat center;
 	background-size:contain;
 	position: relative;
 	margin-left: 55px;
@@ -239,7 +239,7 @@ input,textarea,select{font-family:inherit;font-weight:inherit;font-size:100%}
 }
 
 .index-wrap header .player .wrapper{
-	width:996px;
+	width:100%;
 	height:55px;
 	margin:0 auto;
 	position:relative;
@@ -258,7 +258,7 @@ input,textarea,select{font-family:inherit;font-weight:inherit;font-size:100%}
 }
 
 .index-wrap header .player .play-pause {
-	margin-left: 90px;
+	margin-left: 290px;
 	cursor:pointer;
 	width:55px;
 	height:55px;
@@ -332,8 +332,8 @@ input,textarea,select{font-family:inherit;font-weight:inherit;font-size:100%}
 
 
 .index-wrap header .player .top-buttons .all-stations-menu .all-stations-dropdown td{
-	width:115px;
-	height:115px;
+	width: calc(100vw / 11);
+    height: calc((100vh - 175px) / 5);
 	padding-bottom:13px;
 	vertical-align:bottom;
 	font-size:13px;
