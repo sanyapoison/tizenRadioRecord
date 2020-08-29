@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-	<title>Radio Record</title>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Radio Record</title>
 
-	<link href="css/input.css" rel="stylesheet">
-	<link href="css/legend.css" rel="stylesheet">
-	<link href="css/template_styles.css" rel="stylesheet">
-	<link href="css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/record.css" rel="stylesheet">
-	<link href="css/style_ss.css" rel="stylesheet">
+<link href="css/input.css" rel="stylesheet">
+<link href="css/legend.css" rel="stylesheet">
+<link href="css/template_styles.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/record.css" rel="stylesheet">
+<link href="css/style_ss.css" rel="stylesheet">
 
-	<script src="js/jquery-2.2.2.min.js" type="text/javascript"></script>
-	<script src="src/libs/lodash.compat.min.js" type="text/javascript"></script>
-	<script src="src/libs/event_emitter.js" type="text/javascript"></script>
-	<script src="dist/smartbox.js" type="text/javascript"></script>
-	<script src="js/app.js" type="text/javascript"></script>
-	<script src="js/scenes/channels1.js" type="text/javascript"></script>
-	<script src="js/scenes/channels2.js" type="text/javascript"></script>
-	<script src="js/legends.js" type="application/javascript"></script>
-	<script src="js/jquery-ui-1.11.4.min.js" type="text/javascript"></script>
-	<script src="js/jquery.Storage.js" type="text/javascript"></script>
-	<script src="js/ui.tabs.js" type="text/javascript"></script>
-	<script src="js/soundmanager2.js" type="text/javascript"></script>
-	<script src="js/jquery.record.js" type="text/javascript"></script>
+<script src="js/jquery-2.2.2.min.js" type="text/javascript"></script>
+<script src="src/libs/lodash.compat.min.js" type="text/javascript"></script>
+<script src="src/libs/event_emitter.js" type="text/javascript"></script>
+<script src="dist/smartbox.js" type="text/javascript"></script>
+<script src="js/app.js" type="text/javascript"></script>
+<script src="js/scenes/channels1.js" type="text/javascript"></script>
+<script src="js/scenes/channels2.js" type="text/javascript"></script>
+<script src="js/legends.js" type="application/javascript"></script>
+<script src="js/jquery-ui-1.11.4.min.js" type="text/javascript"></script>
+<script src="js/jquery.Storage.js" type="text/javascript"></script>
+<script src="js/ui.tabs.js" type="text/javascript"></script>
+<script src="js/soundmanager2.js" type="text/javascript"></script>
+<script src="js/jquery.record.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="screensaver" style="z-index: 501;"></div>
 	<div class="logo-rr-container"></div>
 	<div class="index-wrap">
 		<header>
-			<div class="player current-station-background-color" style="background-color: #2a2d2e;">
+			<div class="player current-station-background-color"
+				style="background-color: #2a2d2e;">
 				<div class="wrapper">
 					<div class="play-pause noselect pull-left ready">
 						<span class="icon-station-pause"></span>
 					</div>
-					<div class="pull-left" id="nowplay-image" style="background-image: url(img/black40.png);">
-						<i class="icon-st-rr" style="width: 100px; color: hsla(245, 25%, 90%, 1);"></i>
+					<div class="pull-left" id="nowplay-image"
+						style="background-image: url(img/black40.png);">
+						<i class="icon-st-rr"
+							style="width: 100px; color: hsla(245, 25%, 90%, 1);"></i>
 					</div>
 					<div class="textinfo pull-left">
-						<div class="current-station-font-color current-station-name" id="nowplay-station" style="color: rgb(224, 223, 236);">
-							Radio Record
-						</div>
-						<div class="" id="nowplay-artist">
-							Loading...
-						</div>
-						<div id="nowplay-title">
-							Loading...
-						</div>
+						<div class="current-station-font-color current-station-name"
+							id="nowplay-station" style="color: rgb(224, 223, 236);">
+							Radio Record</div>
+						<div class="" id="nowplay-artist">Loading...</div>
+						<div id="nowplay-title">Loading...</div>
 					</div>
-					<div class="btn menu" style="position: absolute; margin-top:0px; margin-left: 559px; float: left;">
+					<div class="btn menu">
 						<!-- Необходим для работы smart box-->
 						<div class="btn nav-item menu-item" data-content="channels1">
 							<div class="ch2"></div>
@@ -61,29 +60,66 @@
 					<div class="scenes">
 						<div class="scene channels2">
 							<div class="top-buttons">
-								<div class="all-stations-menu current-station-border-color current-station-font-color pull-left noselect tooltip tooltipstered" style="border-color: rgba(89, 87, 117, 0.5);">
-									<div class="all-stations-dropdown current-station-background-color" style="background-color: #2a2d2e; display: block; margin-right: -142px;">
+								<div
+									class="all-stations-menu current-station-border-color current-station-font-color pull-left noselect tooltip tooltipstered"
+									style="border-color: rgba(89, 87, 117, 0.5);">
+									<div
+										class="all-stations-dropdown current-station-background-color"
+										style="background-color: #2a2d2e; display: block; margin-right: -142px;">
 										<table>
 											<tbody>
 												<tr>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/jungle_320" id="jungle" style="width: 110px;"><span>Jungle</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/liquidfunk_320" id="liquidfunk" style="width: 110px;"><span>Liquid Funk</span></td>
-													<td class="stlogo-russiangold" data-url="http://air2.radiorecord.ru:9003/russiangold_320" id="russiangold"><span>Russian Gold</span></td>
-													<td class="stlogo-drumhits" data-url="http://air2.radiorecord.ru:9003/drumhits_320" id="drumhits"><span>Drum'n'Bass Hits</span></td>
-													<td class="stlogo-eurodance" data-url="http://air2.radiorecord.ru:9003/eurodance_320" id="eurodance"><span>Eurodance</span></td>
-													<td class="stlogo-technopop" data-url="http://air2.radiorecord.ru:9003/technopop_320" id="technopop"><span>Technopop</span></td>
-													<td class="stlogo-discofunk" data-url="http://air2.radiorecord.ru:9003/discofunk_320" id="discofunk"><span>Disco/Funk</span></td>
-													<td class="stlogo-rap" data-url="http://air2.radiorecord.ru:9003/rap_320" id="rap"><span>Rap</span></td>
-													<td class="stlogo-rapclassics" data-url="http://air2.radiorecord.ru:9003/rapclassics_320" id="rapclassics"><span>Rap Classics</span></td>
-													<td class="stlogo-cadillac" data-url="http://air2.radiorecord.ru:9003/cadillac_320" id="cadillac"><span>Cadillac FM</span></td>
-													<td class="stlogo-1980 tile nav-item" data-url="http://air2.radiorecord.ru:9003/1980_320" id="1980"><span>1980-е</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/jungle_320"
+														id="jungle" style="width: 110px;"><span>Jungle</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/liquidfunk_320"
+														id="liquidfunk" style="width: 110px;"><span>Liquid
+															Funk</span></td>
+													<td class="stlogo-russiangold"
+														data-url="http://air2.radiorecord.ru:9003/russiangold_320"
+														id="russiangold"><span>Russian Gold</span></td>
+													<td class="stlogo-drumhits"
+														data-url="http://air2.radiorecord.ru:9003/drumhits_320"
+														id="drumhits"><span>Drum'n'Bass Hits</span></td>
+													<td class="stlogo-eurodance"
+														data-url="http://air2.radiorecord.ru:9003/eurodance_320"
+														id="eurodance"><span>Eurodance</span></td>
+													<td class="stlogo-technopop"
+														data-url="http://air2.radiorecord.ru:9003/technopop_320"
+														id="technopop"><span>Technopop</span></td>
+													<td class="stlogo-discofunk"
+														data-url="http://air2.radiorecord.ru:9003/discofunk_320"
+														id="discofunk"><span>Disco/Funk</span></td>
+													<td class="stlogo-rap"
+														data-url="http://air2.radiorecord.ru:9003/rap_320"
+														id="rap"><span>Rap</span></td>
+													<td class="stlogo-rapclassics"
+														data-url="http://air2.radiorecord.ru:9003/rapclassics_320"
+														id="rapclassics"><span>Rap Classics</span></td>
+													<td class="stlogo-cadillac"
+														data-url="http://air2.radiorecord.ru:9003/cadillac_320"
+														id="cadillac"><span>Cadillac FM</span></td>
+													<td class="stlogo-1980 tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/1980_320"
+														id="1980"><span>1980-е</span></td>
 												</tr>
 												<tr>
-													<td class="chillhouse" data-url="http://air2.radiorecord.ru:9003/chillhouse_320" id="chillhouse"><span>Chill House</span></td>
-													<td class="groovetribal" data-url="http://air2.radiorecord.ru:805/groovetribal_320" id="groovetribal"><span>Groove/Tribal</span></td>
-													<td class="complextro" data-url="http://air2.radiorecord.ru:9003/complextro_320" id="complextro"><span>Complextro</span></td>
-													<td class="stlogo-1970 tile nav-item" data-url="http://air2.radiorecord.ru:9003/1970_320" id="1970"><span>1970-е</span></td>
-													<td class="stlogo-russianhits tile nav-item" data-url="http://air2.radiorecord.ru:9003/russianhits_320" id="russianhits"><span>Russian Hits</span></td>
+													<td class="chillhouse"
+														data-url="http://air2.radiorecord.ru:9003/chillhouse_320"
+														id="chillhouse"><span>Chill House</span></td>
+													<td class="groovetribal"
+														data-url="http://air2.radiorecord.ru:805/groovetribal_320"
+														id="groovetribal"><span>Groove/Tribal</span></td>
+													<td class="complextro"
+														data-url="http://air2.radiorecord.ru:9003/complextro_320"
+														id="complextro"><span>Complextro</span></td>
+													<td class="stlogo-1970 tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/1970_320"
+														id="1970"><span>1970-е</span></td>
+													<td class="stlogo-russianhits tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/russianhits_320"
+														id="russianhits"><span>Russian Hits</span></td>
 													<td class="" data-url="" id=""><span></span></td>
 													<td class="" data-url="" id=""><span></span></td>
 													<td class="" data-url="" id=""><span></span></td>
@@ -138,74 +174,185 @@
 						</div>
 						<div class="scenes channels1">
 							<div class="top-buttons">
-								<div class="all-stations-menu current-station-border-color current-station-font-color pull-left noselect tooltip tooltipstered" style="color: rgb(224, 223, 236); border-color: rgba(89, 87, 117, 0.5);">
-									<div class="all-stations-dropdown current-station-background-color" style="background-color: #2a2d2e; display: block; z-index:; margin-right: -142px;">
+								<div
+									class="all-stations-menu current-station-border-color current-station-font-color pull-left noselect tooltip tooltipstered"
+									style="color: rgb(224, 223, 236); border-color: rgba(89, 87, 117, 0.5);">
+									<div
+										class="all-stations-dropdown current-station-background-color"
+										style="background-color: #2a2d2e; display: block; z-index:; margin-right: -142px;">
 										<table>
 											<tbody>
 												<tr>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rr_320" id="rr"><span>Radio&nbsp;Record</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/fut_320" id="fut"><span>Future House</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/club_320" id="club"><span>EDM</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mix_320" id="mix"><span>Megamix</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/gold_320" id="gold" style="width: 113px; border-bottom: none;"><span>Gold</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/tm_320" id="tm"><span>Trancemission</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/ps_320" id="ps"><span>Pirate&nbsp;Station</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/deep_320" id="deep"><span>Deep</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/vip_320" id="vip"><span>Vip&nbsp;House</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mini_320" id="mini"><span>Minimal/Tech</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/trop_320" id="trop"><span>Tropical</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/rr_320" id="rr"><span>Radio&nbsp;Record</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/fut_320"
+														id="fut"><span>Future House</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/club_320"
+														id="club"><span>EDM</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/mix_320"
+														id="mix"><span>Megamix</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/gold_320"
+														id="gold" style="width: 113px; border-bottom: none;"><span>Gold</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/tm_320" id="tm"><span>Trancemission</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/ps_320" id="ps"><span>Pirate&nbsp;Station</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/deep_320"
+														id="deep"><span>Deep</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/vip_320"
+														id="vip"><span>Vip&nbsp;House</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/mini_320"
+														id="mini"><span>Minimal/Tech</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/trop_320"
+														id="trop"><span>Tropical</span></td>
 												</tr>
 												<tr>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/chil_320" id="chil"><span>Chill-Out</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rus_320" id="rus"><span>Russian&nbsp;Mix</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/sd90_320" id="sd90"><span>Супердиско&nbsp;90-х</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/fbass_320" id="fbass"><span>Future Bass</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rmx_320" id="rmx"><span>Remix</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/gast_320" id="gast"><span>Гастарбайтер FM</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/hbass_320" id="hbass"><span>Hard Bass</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/ansh_320" id="ansh"><span>Аншлаг FM</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/ibiza_320" id="ibiza"><span>Innocence</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/goa_320" id="goa"><span>GOA/PSY</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/yo_320" id="yo"><span>Black</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/chil_320"
+														id="chil"><span>Chill-Out</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/rus_320"
+														id="rus"><span>Russian&nbsp;Mix</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/sd90_320"
+														id="sd90"><span>Супердиско&nbsp;90-х</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/fbass_320"
+														id="fbass"><span>Future Bass</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/rmx_320"
+														id="rmx"><span>Remix</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/gast_320"
+														id="gast"><span>Гастарбайтер FM</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/hbass_320"
+														id="hbass"><span>Hard Bass</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/ansh_320"
+														id="ansh"><span>Аншлаг FM</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/ibiza_320"
+														id="ibiza"><span>Innocence</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/goa_320"
+														id="goa"><span>GOA/PSY</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/yo_320" id="yo"><span>Black</span></td>
 												</tr>
 												<tr>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/brks_320" id="brks"><span>Breaks</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/pump_320" id="pump"><span>Old School</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/techno_320" id="techno"><span>Techno</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/trap_320" id="trap"><span>Trap</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/dub_320" id="dub"><span>Dubstep</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/teo_320" id="teo"><span>Hardstyle</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rave_320" id="rave"><span>Rave&nbsp;FM</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/dc_320" id="dc"><span>Dancecore</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/naft_320" id="naft"><span>Нафталин&nbsp;FM</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/rock_320" id="rock"><span>Rock</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mdl_320" id="mdl"><span>Медляк&nbsp;FM</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/brks_320"
+														id="brks"><span>Breaks</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/pump_320"
+														id="pump"><span>Old School</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/techno_320"
+														id="techno"><span>Techno</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/trap_320"
+														id="trap"><span>Trap</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/dub_320"
+														id="dub"><span>Dubstep</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/teo_320"
+														id="teo"><span>Hardstyle</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/rave_320"
+														id="rave"><span>Rave&nbsp;FM</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/dc_320" id="dc"><span>Dancecore</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/naft_320"
+														id="naft"><span>Нафталин&nbsp;FM</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/rock_320"
+														id="rock"><span>Rock</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/mdl_320"
+														id="mdl"><span>Медляк&nbsp;FM</span></td>
 												</tr>
 												<tr>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/gop_320" id="gop"><span>Гоп&nbsp;FM</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mf_320" id="mf"><span>Маятник&nbsp;Фуко</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/symph_320" id="symph" style="width:110px;"><span>Симфония&nbsp;FM</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/elect_320" id="elect" style="width:110px;"><span>Electro</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mt_320" id="mt" style="width:114px;"><span>Midtempo</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/mmbt_320" id="mmbt" style="width:110px;"><span>Moombahton</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/jackin_320" id="jackin" style="width:110px;"><span>Jackin'/Garage</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/progr_320" id="progr" style="width:110px;"><span>Progressive</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/househits_320" id="househits" style="width:110px;"><span>House Hits</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/synth_320" id="synth"><span>Synthwave</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/bighits_320" id="bighits"><span>Big Hits</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/gop_320"
+														id="gop"><span>Гоп&nbsp;FM</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/mf_320" id="mf"><span>Маятник&nbsp;Фуко</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/symph_320"
+														id="symph" style="width: 110px;"><span>Симфония&nbsp;FM</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/elect_320"
+														id="elect" style="width: 110px;"><span>Electro</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/mt_320" id="mt"
+														style="width: 114px;"><span>Midtempo</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/mmbt_320"
+														id="mmbt" style="width: 110px;"><span>Moombahton</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/jackin_320"
+														id="jackin" style="width: 110px;"><span>Jackin'/Garage</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/progr_320"
+														id="progr" style="width: 110px;"><span>Progressive</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/househits_320"
+														id="househits" style="width: 110px;"><span>House
+															Hits</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/synth_320"
+														id="synth"><span>Synthwave</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/bighits_320"
+														id="bighits"><span>Big Hits</span></td>
 												</tr>
 												<tr>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/dream_320" id="dream"><span>Dream Dance</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/darkside_320" id="darkside"><span>Darkside</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/uplift_320" id="uplift"><span>Uplifting</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/houseclss_320" id="houseclss"><span>House Classics</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/edmhits_320" id="edmhits"><span>EDM Hits</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/trancehouse_320" id="trancehouse" style="width: 110px;"><span>Trancehouse</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/hypno_320" id="hypno" style="width: 110px;"><span>Hypnotic</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/neurofunk_320" id="neurofunk" style="width: 110px;"><span>Neurofunk</span></td>
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/tecktonik_320" id="tecktonik" style="width: 110px;"><span>Tecktonik</span></td>
-													<td class="station-2-step tile nav-item" data-url="http://air2.radiorecord.ru:9003/2step_320" id="2step" style="width: 110px;"><span>2-step</span></td><!--необходимо прописать class="station-2-step" для отображения иконки-->
-													<td class="tile nav-item" data-url="http://air2.radiorecord.ru:9003/trancehits_320" id="trancehits" style="width: 110px;"><span>Trance Hits</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/dream_320"
+														id="dream"><span>Dream Dance</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/darkside_320"
+														id="darkside"><span>Darkside</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/uplift_320"
+														id="uplift"><span>Uplifting</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/houseclss_320"
+														id="houseclss"><span>House Classics</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/edmhits_320"
+														id="edmhits"><span>EDM Hits</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/trancehouse_320"
+														id="trancehouse" style="width: 110px;"><span>Trancehouse</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/hypno_320"
+														id="hypno" style="width: 110px;"><span>Hypnotic</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/neurofunk_320"
+														id="neurofunk" style="width: 110px;"><span>Neurofunk</span></td>
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/tecktonik_320"
+														id="tecktonik" style="width: 110px;"><span>Tecktonik</span></td>
+													<td class="station-2-step tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/2step_320"
+														id="2step" style="width: 110px;"><span>2-step</span></td>
+													<!--необходимо прописать class="station-2-step" для отображения иконки-->
+													<td class="tile nav-item"
+														data-url="http://air2.radiorecord.ru:9003/trancehits_320"
+														id="trancehits" style="width: 110px;"><span>Trance
+															Hits</span></td>
 												</tr>
 											</tbody>
 										</table>
@@ -720,9 +867,9 @@
 
 		                  
 
-		</script> 
+		</script>
 		<script src="js/index1.js">
-		</script> 
+		</script>
 	</div>
 </body>
 </html>

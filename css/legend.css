@@ -1,180 +1,158 @@
-.border1{
-    position: fixed;
-    
-    
-    z-index: 502;
-    margin-left:570px; 
-    
-	
+.border1 {
+	position: fixed;
+	z-index: 502;
+	margin-left: 570px;
 }
-.legend {
 
-    
-    position: absolute;
-    width: 50px;
-   
-    top: 0px;
-    right: 57px;
-    height: 32px;
-    padding: 2px 0 0;
-    
-    font-size: 16px;
-    z-index: 502;
-    line-height: 28px;
-    display: none;
-   
+.legend {
+	position: absolute;
+	width: 50px;
+	top: 0px;
+	right: 57px;
+	height: 32px;
+	padding: 2px 0 0;
+	font-size: 16px;
+	z-index: 502;
+	line-height: 28px;
+	display: none;
 }
 
 .legend-wrap {
-    float: right;
-}
-
-.legend-item{
-    float: right;
-    position: relative;
-    padding-left: 30px;
-    padding-right: 10px;
+	float: right;
 }
 
 .legend-item {
-    display: none;
+	float: right;
+	position: relative;
+	padding-left: 30px;
+	padding-right: 10px;
+}
+
+.legend-item {
+	display: none;
 }
 
 .legend-item.legend-item-visible {
-    display: block;
+	display: block;
 }
-
-
 
 .legend-clickable {
-    cursor: pointer;
+	cursor: pointer;
 }
 
-
-
-
-.leg-icon-green{
-    position: absolute;
-    opacity:0.5;
-	filter:alpha(opacity=50);   
-    background: url('img/reload.png') no-repeat;
-    width: 48px;
-    height: 48px;
-    left: 0;
-    top: 1px;
+.leg-icon-green {
+	position: absolute;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	background: url('img/reload.png') no-repeat;
+	width: 48px;
+	height: 48px;
+	left: 0;
+	top: 1px;
 }
 
-
-
-.leg-icon-red{
+.leg-icon-red {
 	border: -5px solid transparent;
-    position: absolute;
-    opacity:0.5;
-	filter:alpha(opacity=50);  
-    background: url('img/exit.png') no-repeat;
-    width: 48px;
-    height: 48px;
+	position: absolute;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	background: url('img/exit.png') no-repeat;
+	width: 48px;
+	height: 48px;
 	padding: 0 0 0 0;
-    left: 0;
-    top: 1px;
-    margin-left:47px; 
+	left: 0;
+	top: 1px;
+	margin-left: 47px;
 }
 
-.focus{     
-    opacity: 1;
-    color: #191919;
-    border-radius: 4px;
-    filter: alpha(opacity=100);
-    background-color: #ececec;
-    -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,.1), 0 2px 6px 0 rgba(0,0,0,.1);
-    box-shadow: 0 0 2px 0 rgba(0,0,0,.1), 0 2px 6px 0 rgba(0,0,0,.1);
-
-	
+.focus {
+	opacity: 1;
+	color: #191919;
+	border-radius: 4px;
+	filter: alpha(opacity = 100);
+	background-color: #ececec;
+	-webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, .1), 0 2px 6px 0
+		rgba(0, 0, 0, .1);
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, .1), 0 2px 6px 0 rgba(0, 0, 0, .1);
 }
-
-
-
-
-
-
 
 .leg-icon-yellow {
-    background-position: -48px 0;
+	background-position: -48px 0;
 }
 
 .leg-icon-blue {
-    background-position: -72px 0;
+	background-position: -72px 0;
 }
 
 .leg-icon-number {
-    background-position: -480px 0;
-    width: 50px;
+	background-position: -480px 0;
+	width: 50px;
 }
 
 .legend-item-number {
-    padding-left: 60px;
+	padding-left: 60px;
 }
 
 .leg-icon-rew {
-    background-position: -431px 0;
+	background-position: -431px 0;
 }
 
 .leg-icon-play {
-    background-position: -240px 0;
+	background-position: -240px 0;
 }
 
 .leg-icon-pause {
-    background-position: -288px 0;
+	background-position: -288px 0;
 }
 
 .leg-icon-stop {
-    background-position: -263px 0;
+	background-position: -263px 0;
 }
 
 .leg-icon-ff {
-    background-position: -455px 0;
+	background-position: -455px 0;
 }
 
 .leg-icon-tools {
-    background-position: -191px 0;
+	background-position: -191px 0;
 }
 
 .leg-icon-left {
-    background-position: -580px 0;
+	background-position: -580px 0;
 }
 
 .leg-icon-right {
-    background-position: -603px 0;
+	background-position: -603px 0;
 }
 
 .leg-icon-up {
-    background-position: -530px 0;
+	background-position: -530px 0;
 }
 
 .leg-icon-down {
-    background-position: -554px 0;
+	background-position: -554px 0;
 }
 
 .leg-icon-leftright {
-    background-position: -358px 0;
+	background-position: -358px 0;
 }
 
 .leg-icon-updown {
-    background-position: -334px 0;
+	background-position: -334px 0;
 }
 
 .leg-icon-move {
-    background-position: -312px 0;
+	background-position: -312px 0;
 }
 
 .leg-icon-enter {
-    background-position: -383px 0;
+	background-position: -383px 0;
 }
 
 .leg-icon-ret {
-    background-position: -407px 0;
+	background-position: -407px 0;
 }
 
 .leg-icon-info {
-    background-position: -168px 0;
+	background-position: -168px 0;
 }
